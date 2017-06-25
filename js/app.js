@@ -1,7 +1,9 @@
 
 //adiciona biblioteca jquery do node_modules
 window.$ = window.jQuery = require('jquery');
-require('bootstrap');
+
+//tira os scroll bar da tela
+document.documentElement.style.overflow = 'hidden';
 
 const btn = $("#teste1");
 /**
