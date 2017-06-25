@@ -1,5 +1,4 @@
 
-
 * {
     margin: 0;
     padding: 0;
@@ -8,11 +7,14 @@
 body{
     background-color: #e5e5e5;
 }
+
 .base{
     width: 100vw;
     height: 100vh;
 }
-
+#root{
+    margin-left: 120px;
+}
 
 .col-sm-12{
     margin: 12px 40px;
@@ -27,7 +29,7 @@ body{
     margin: 12px;
     background-color: white;
     position: absolute;
-    right: 20%;
+    right: 15%;
     z-index: 9999;
     display: inline-block;
     border-radius: 13px;
