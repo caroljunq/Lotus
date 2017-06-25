@@ -1,0 +1,34 @@
+{
+  "name": "lotus",
+  "version": "1.0.0",
+  "description": "Tcc Doido",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . app --platform win32 --arch x64 --out dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksetoue/motorola-radio-simulator.git"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Carol",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.6.2",
+    "electron-packager": "^8.7.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ksetoue/motorola-radio-simulator/issues"
+  },
+  "homepage": "https://github.com/ksetoue/motorola-radio-simulator#readme"
+}
