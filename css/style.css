@@ -126,12 +126,12 @@ body{
 
 .elemento{
     width: 70%;
-    cursor: pointer;
+    cursor: pointer !important;
     opacity: 0.5;
     padding-top: 5px;
     margin-left: -14px;
 }
-
+ 
 .btn-saiba-mais{
     background: url("../img/botoes/saiba_mais1.png") no-repeat;
     right: -172px;
@@ -159,5 +159,3 @@ body{
     right: -183px;
     bottom: 64px; 
 }
-
-
