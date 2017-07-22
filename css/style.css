@@ -129,6 +129,14 @@ body{
     cursor: pointer;
     opacity: 0.5;
     padding-top: 5px;
+    margin-left: -14px;
+}
+
+.btn-saiba-mais{
+    background: url("../img/botoes/saiba_mais1.png") no-repeat;
+    right: -172px;
+    top: -208px;
+    
 }
 
 
