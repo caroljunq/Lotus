@@ -1,5 +1,5 @@
 @media only screen and (max-height: 720px) and (max-width: 1280px){
-    .bton{
+    .btn{
         transform: scale(.13);
     }
     
@@ -19,14 +19,12 @@
     }
 
     .title-movimentos{
-
         top: calc(37% + 24px);
-
     }
 
     .title-objetos{
-
         top: calc(62% + 36px);
     }
+
 
 }

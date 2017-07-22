@@ -5,7 +5,7 @@ window.$ = window.jQuery = require('jquery');
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
 
-const btn = $("#teste1");
+const btn = $(".btn-rotacionar");
 /**
  *
  */
@@ -21,7 +21,7 @@ function digaOi(){
 /**
  * Init
  */
-var init = function(){
+function init(){
     setEvents();
 
 }
