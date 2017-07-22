@@ -159,3 +159,11 @@ body{
     right: -183px;
     bottom: 64px; 
 }
+
+.btn-elemento:hover{
+    opacity: 1.0;
+}
+
+.btn-elemento{
+    z-index: 9999;
+}

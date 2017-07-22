@@ -5,7 +5,7 @@ window.$ = window.jQuery = require('jquery');
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
 
-const btn = $(".clicavel");
+const btn = $(".btn-rotacionar");
 /**
  *
  */
