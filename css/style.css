@@ -97,10 +97,10 @@ body{
     position: relative;
 }
 
-.btn:hover{
+.bton:hover{
     opacity: 0.5;
 }
-.btn{
+.bton{
     width: 506px;
     height: 506px;
     transform: scale(.185);
