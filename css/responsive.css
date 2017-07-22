@@ -26,5 +26,9 @@
         top: calc(62% + 36px);
     }
 
+    .btn-salvar{
+        transform: scale(.12);
+        right: -465px;
 
+    }
 }

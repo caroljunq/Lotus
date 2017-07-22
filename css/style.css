@@ -139,4 +139,25 @@ body{
     
 }
 
+.btn-jpg{
+    background: url("../img/botoes/jpeg_on.png") no-repeat;
+    right: -121px;
+    bottom: 64px;  
+}
+
+.btn-salvar{
+    background: url("../img/botoes/salvar.png") no-repeat;
+    right: -442px;
+    bottom: -122px;
+    width: 1108px;
+    height: 517px;
+    transform: scale(.15);
+}
+
+.btn-gif{
+    background: url("../img/botoes/gif_on.png") no-repeat; 
+    right: -183px;
+    bottom: 64px; 
+}
+
 
