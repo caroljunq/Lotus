@@ -5,23 +5,51 @@ window.$ = window.jQuery = require('jquery');
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
 
-const btn = $('.elemento');
+const character = $('.personagem'),
+      object = $('.objeto'),
+      moviment = $('.movimento');
+
+let currentCharacter = 0;
+let currentObject = 0;
+let currentMoviment = 0;
+
 /**
- *
+ * Eventos elementos e botoes
  */
+
 function setEvents(){
-    btn.on('click',e => digaOi(e));
-   
+    character.on('click', e => selectCharacter(e));
+    object.on('click', e => selectObject(e));
+    moviment.on('click', e => selectMoviment(e));
 }
 
-function digaOi(e){
-    console.log($(e.currentTarget));
-}
 /**
  * Init
  */
 function init(){
     setEvents();
+}
+
+/**
+ * Eventos elementos e botoes
+ */
+
+function selectCharacter(e){
+    let characterClass = $(e.currentTarget).attr("class").split(" ");
+    currentCharacter = characterClass[2];
+    console.log(currentCharacter);
+}
+
+function selectObject(e){
+    let objectClass = $(e.currentTarget).attr("class").split(" ");
+    currentObject = objectClass[2];
+    console.log(currentObject);
+}
+
+function selectMoviment(e){
+    let movimentClass = $(e.currentTarget).attr("class").split(" ");
+    movimentClass = movimentClass[2];
+    console.log(movimentClass);
 }
 
 init();
