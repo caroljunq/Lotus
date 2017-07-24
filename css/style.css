@@ -159,3 +159,7 @@ body{
     right: -183px;
     bottom: 64px; 
 }
+
+.selecionado{
+    opacity: 1.0;
+}

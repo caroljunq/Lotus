@@ -31,25 +31,35 @@ function init(){
 }
 
 /**
- * Eventos elementos e botoes
+ * Retorna personagem selecionado
  */
 
 function selectCharacter(e){
     let characterClass = $(e.currentTarget).attr("class").split(" ");
+    character.removeClass("selecionado");
     currentCharacter = characterClass[2];
-    console.log(currentCharacter);
+    $("."+currentCharacter).addClass("selecionado");
 }
 
+/**
+ * Retorna objeto selecionado
+ */
 function selectObject(e){
     let objectClass = $(e.currentTarget).attr("class").split(" ");
+    object.removeClass("selecionado");
     currentObject = objectClass[2];
-    console.log(currentObject);
+    $("."+currentObject).addClass("selecionado");
 }
+
+/**
+ * Retorna movimento selecionado
+ */
 
 function selectMoviment(e){
     let movimentClass = $(e.currentTarget).attr("class").split(" ");
-    movimentClass = movimentClass[2];
-    console.log(movimentClass);
+    moviment.removeClass("selecionado");
+    currentMoviment = movimentClass[2];
+    $("."+currentMoviment).addClass("selecionado");
 }
 
 init();
