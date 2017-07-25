@@ -12,11 +12,13 @@ const character = $('.personagem'),
       moviment = $('.movimento'),
       imgCharacter = document.getElementById("personagem-escolhido"),
       imgHand = document.getElementById("mao"),
-      imgObj = document.getElementById("obj");
+      imgObj = document.getElementById("obj"),
+      btnRotacionar = $(".btn-rotacionar");
 
 let currentCharacter = 0;
 let currentObject = 0;
 let currentMoviment = 0;
+let currentDegree = 0;
 
 /**
  * Eventos elementos e botoes
@@ -26,6 +28,7 @@ function setEvents(){
     character.on('click', e => selectCharacter(e));
     object.on('click', e => selectObject(e));
     moviment.on('click', e => selectMoviment(e));
+    btnRotacionar.on('click', e => rotateObj(e));
 }
 
 /**
@@ -88,6 +91,17 @@ function checkHands(){
     }else{
        imgHand.src = "";
     }
+}
+
+/**
+ * Rotaciona objeto
+ */
+
+function rotateObj(e){
+    currentDegree += 15;
+    if(currentDegree > 360)
+        currentDegree = 0;
+    $("#obj").css("transform","rotate("+currentDegree+"deg)");
 }
 
 init();

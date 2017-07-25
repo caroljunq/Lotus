@@ -181,3 +181,7 @@ body{
     z-index: 3;
     position: absolute;
 }
+
+.move-obj{
+    position: absolute;
+}
