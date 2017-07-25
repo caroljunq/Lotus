@@ -27,6 +27,7 @@
     "electron-packager": "^8.7.1"
   },
   "dependencies": {
+    "dom-to-image": "^2.5.2",
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1"
   },

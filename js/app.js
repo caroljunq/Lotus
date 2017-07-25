@@ -5,9 +5,13 @@ window.$ = window.jQuery = require('jquery');
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
 
+const domtoimage = require('dom-to-image');
+
 const character = $('.personagem'),
       object = $('.objeto'),
-      moviment = $('.movimento');
+      moviment = $('.movimento'),
+      imgCharacter = document.getElementById("personagem-escolhido"),
+      imgHand = document.getElementById("mao");
 
 let currentCharacter = 0;
 let currentObject = 0;
@@ -38,7 +42,12 @@ function selectCharacter(e){
     let characterClass = $(e.currentTarget).attr("class").split(" ");
     character.removeClass("selecionado");
     currentCharacter = characterClass[2];
-    $("."+currentCharacter).addClass("selecionado");
+    $("."+currentCharacter).addClass("selecionado");    
+    if(currentMoviment && currentCharacter){
+       imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
+       checkHands()
+    }
+       
 }
 
 /**
@@ -60,26 +69,42 @@ function selectMoviment(e){
     moviment.removeClass("selecionado");
     currentMoviment = movimentClass[2];
     $("."+currentMoviment).addClass("selecionado");
+     if(currentMoviment && currentCharacter){
+         imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
+         checkHands()
+     }
+}
+
+
+/**
+ * Checa se o movimento precisa de maos;
+ */
+
+function checkHands(){
+    if(currentMoviment == "m4" || currentMoviment == "m5" || currentMoviment == "m6"){
+       imgHand.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+"-mao.png"; 
+    }else{
+       imgHand.src = "";
+    }
 }
 
 init();
 
 
-/**
-* This is a description
-* @namespace My.Namespace
-* @method myMethodName
-* @param {String} str - some string
-* @param {Object} obj - some object
-* @param {requestCallback} callback - The callback that handles the response.
-* @return {bool} some bool
-*/
-
-// var domtoimage = require('dom-to-image');
-
-// var node = document.getElementById('teste1');
+///**
+//* This is a description
+//* @namespace My.Namespace
+//* @method myMethodName
+//* @param {String} str - some string
+//* @param {Object} obj - some object
+//* @param {requestCallback} callback - The callback that handles the response.
+//* @return {bool} some bool
+//*/
 //
-// domtoimage.toJpeg(document.getElementById('teste1'), { width: 500, height: 500 })
+
+
+
+// domtoimage.toJpeg(document.getElementById('opa'), { width: 500, height: 500 })
 //     .then(function (dataUrl) {
 //         var link = document.createElement('a');
 //         link.download = 'my-image-name.jpeg';
