@@ -13,7 +13,10 @@ const character = $('.personagem'),
       imgCharacter = document.getElementById("personagem-escolhido"),
       imgHand = document.getElementById("mao"),
       imgObj = document.getElementById("obj"),
-      btnRotacionar = $(".btn-rotacionar");
+      btnRotacionar = $(".btn-rotacionar"),
+      btnZoomIn = $(".btn-aumentar"),
+      btnZoomOut = $(".btn-diminuir"),
+      obj = $("#obj");
 
 let currentCharacter = 0;
 let currentObject = 0;
@@ -29,6 +32,8 @@ function setEvents(){
     object.on('click', e => selectObject(e));
     moviment.on('click', e => selectMoviment(e));
     btnRotacionar.on('click', e => rotateObj(e));
+    btnZoomIn.on('click', e => zoomIn());
+    btnZoomOut.on('click', e => zoomOut());
 }
 
 /**
@@ -101,7 +106,28 @@ function rotateObj(e){
     currentDegree += 15;
     if(currentDegree > 360)
         currentDegree = 0;
-    $("#obj").css("transform","rotate("+currentDegree+"deg)");
+    obj.css("transform","rotate("+currentDegree+"deg)");
+}
+
+/**
+ * Aumenta imagem escolhida em 15 px
+    */
+    
+function zoomIn(){
+    var currentWidth = parseInt(obj.css('width'),10);
+    currentWidth += 15;
+    obj.css("width",currentWidth + "px");
+}
+    
+    
+/**
+* Diminui imagem escolhida em 15 px
+*/
+    
+function zoomOut(){
+    var currentWidth = parseInt(obj.css('width'),10);
+    currentWidth -= 15;
+    obj.css("width",currentWidth + "px");
 }
 
 init();
