@@ -171,8 +171,16 @@ body{
 #mao{
     width: 45vw;
     position: absolute;
-    z-index: 5;
+    z-index: 4;
     right: 4vw;
 }
 
+#obj{
+    width: 150px;
+    z-index: 3;
+    position: absolute;
+}
 
+.botoes{
+    z-index: 5;
+}

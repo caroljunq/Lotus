@@ -11,7 +11,8 @@ const character = $('.personagem'),
       object = $('.objeto'),
       moviment = $('.movimento'),
       imgCharacter = document.getElementById("personagem-escolhido"),
-      imgHand = document.getElementById("mao");
+      imgHand = document.getElementById("mao"),
+      imgObj = document.getElementById("obj");
 
 let currentCharacter = 0;
 let currentObject = 0;
@@ -58,6 +59,7 @@ function selectObject(e){
     object.removeClass("selecionado");
     currentObject = objectClass[2];
     $("."+currentObject).addClass("selecionado");
+    imgObj.src = "img/objetos/"+currentObject+".png"; 
 }
 
 /**
