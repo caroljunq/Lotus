@@ -94,6 +94,7 @@ body{
     width: 300px;
     height: 80px;
     position: relative;
+    z-index: 5;
 }
 
 .bton:hover{
@@ -179,8 +180,4 @@ body{
     width: 150px;
     z-index: 3;
     position: absolute;
-}
-
-.botoes{
-    z-index: 5;
 }
