@@ -1,14 +1,11 @@
 
 //adiciona biblioteca jquery do node_modules
 window.$ = window.jQuery = require('jquery');
-require('jquery-ui');
 
 const html2canvas = require('html2canvas');
 
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
-
-
 
 
 const character = $('.personagem'),
@@ -123,7 +120,7 @@ function rotateObj(e){
 
 /**
  * Aumenta imagem escolhida em 15 px
-    */
+*/
     
 function zoomIn(){
     let currentWidth = parseInt(obj.css('width'),10);
