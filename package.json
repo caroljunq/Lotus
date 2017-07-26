@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ksetoue/motorola-radio-simulator.git"
+    "url": "git+https://github.com/caroljunq
   },
   "keywords": [
     "Electron",
@@ -29,10 +29,9 @@
   "dependencies": {
     "html2canvas": "^0.5.0-beta4",
     "jquery": "^3.2.1",
-    "jquery-ui": "^1.12.1"
   },
   "bugs": {
-    "url": "https://github.com/ksetoue/motorola-radio-simulator/issues"
+    "url": "https://github.com/caroljunq
   },
-  "homepage": "https://github.com/ksetoue/motorola-radio-simulator#readme"
+  "homepage": "https://github.com/caroljunq
 }

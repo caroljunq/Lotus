@@ -1,14 +1,11 @@
 
 //adiciona biblioteca jquery do node_modules
 window.$ = window.jQuery = require('jquery');
-require('jquery-ui');
 
 const html2canvas = require('html2canvas');
 
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
-
-
 
 
 const character = $('.personagem'),
@@ -123,10 +120,10 @@ function rotateObj(e){
 
 /**
  * Aumenta imagem escolhida em 15 px
-    */
+*/
     
 function zoomIn(){
-    var currentWidth = parseInt(obj.css('width'),10);
+    let currentWidth = parseInt(obj.css('width'),10);
     currentWidth += 15;
     obj.css("width",currentWidth + "px");
 }
@@ -137,7 +134,7 @@ function zoomIn(){
 */
     
 function zoomOut(){
-    var currentWidth = parseInt(obj.css('width'),10);
+    let currentWidth = parseInt(obj.css('width'),10);
     currentWidth -= 15;
     obj.css("width",currentWidth + "px");
 }
@@ -150,7 +147,7 @@ function saveImg(){
     html2canvas($('.quadro-imagens'), 
     {
       onrendered: function (canvas) {
-        var a = document.createElement('a');
+        let a = document.createElement('a');
         // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
         a.download = 'foto1.jpg';
