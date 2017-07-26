@@ -2,10 +2,12 @@
 //adiciona biblioteca jquery do node_modules
 window.$ = window.jQuery = require('jquery');
 
+const html2canvas = require('html2canvas');
+
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
 
-const domtoimage = require('dom-to-image');
+
 
 const character = $('.personagem'),
       object = $('.objeto'),
@@ -16,7 +18,8 @@ const character = $('.personagem'),
       btnRotacionar = $(".btn-rotacionar"),
       btnZoomIn = $(".btn-aumentar"),
       btnZoomOut = $(".btn-diminuir"),
-      obj = $("#obj");
+      obj = $("#obj"),
+      btnSave = $(".btn-salvar");
 
 let currentCharacter = 0;
 let currentObject = 0;
@@ -34,7 +37,10 @@ function setEvents(){
     btnRotacionar.on('click', e => rotateObj(e));
     btnZoomIn.on('click', e => zoomIn());
     btnZoomOut.on('click', e => zoomOut());
+    btnSave.on('click',e => saveImg());
+    $("#obj").draggable();
 }
+
 
 /**
  * Init
@@ -130,26 +136,24 @@ function zoomOut(){
     obj.css("width",currentWidth + "px");
 }
 
+/**
+* Salva img
+*/
+function saveImg(){
+    $(".botoes").hide();
+    html2canvas($('.quadro-imagens'), 
+    {
+      onrendered: function (canvas) {
+        var a = document.createElement('a');
+        // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+        a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+        a.download = 'foto1.jpg';
+        a.click();
+      }
+    });
+    $(".botoes").show();
+}
+
 init();
 
 
-///**
-//* This is a description
-//* @namespace My.Namespace
-//* @method myMethodName
-//* @param {String} str - some string
-//* @param {Object} obj - some object
-//* @param {requestCallback} callback - The callback that handles the response.
-//* @return {bool} some bool
-//*/
-//
-
-
-
-// domtoimage.toJpeg(document.getElementById('opa'), { width: 500, height: 500 })
-//     .then(function (dataUrl) {
-//         var link = document.createElement('a');
-//         link.download = 'my-image-name.jpeg';
-//         link.href = dataUrl;
-//         link.click();
-//     });
