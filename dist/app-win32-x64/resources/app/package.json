@@ -19,12 +19,15 @@
     "demo"
   ],
   "author": "Carol",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "electron": "~1.6.2",
+    "electron-installer-squirrel-windows": "^1.3.0",
+    "electron-installer-windows": "^0.2.0",
     "electron-packager": "^8.7.1"
   },
   "dependencies": {
+    "html2canvas": "^0.5.0-beta4",
     "jquery": "^3.2.1"
   },
   "bugs": {
