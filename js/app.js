@@ -1,11 +1,13 @@
 
 //adiciona biblioteca jquery do node_modules
 window.$ = window.jQuery = require('jquery');
+require('jquery-ui');
 
 const html2canvas = require('html2canvas');
 
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
+
 
 
 
@@ -31,14 +33,18 @@ let currentDegree = 0;
  */
 
 function setEvents(){
-    character.on('click', e => selectCharacter(e));
+    character.on('click', e => selectCharacter(e))
     object.on('click', e => selectObject(e));
     moviment.on('click', e => selectMoviment(e));
     btnRotacionar.on('click', e => rotateObj(e));
     btnZoomIn.on('click', e => zoomIn());
     btnZoomOut.on('click', e => zoomOut());
     btnSave.on('click',e => saveImg());
-    $("#obj").draggable();
+    $(document).ready(function() {
+        obj.draggable({
+            containment: $('.quadro-imagens')
+        });
+    });
 }
 
 
