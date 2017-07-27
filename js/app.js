@@ -58,7 +58,7 @@ const objetos = {
     'o4':'bule',
     'o5':'nave',
     'o6':'remo',
-    'o7':'lata',
+    'o7':'latinha',
     'o8':'bicho',
     'o9':'mochila'
 }
@@ -102,19 +102,7 @@ function selectCharacter(e){
     character.removeClass("selecionado");
     currentCharacter = characterClass[2];
     $("."+currentCharacter).addClass("selecionado");
-    
-    if(btnJpg.attr('class').indexOf('btn-jpg-ativo') != -1){
-        if(currentMoviment && currentCharacter){
-            imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
-            checkHands()
-        }  
-    }else if(btnGif.attr('class').indexOf('btn-gif-ativo')!= -1){
-        if(currentObject && currentCharacter && (currentMoviment == 'm1' || currentMoviment == 'm2' || currentMoviment == 'm3')){
-            imgCharacter.src = "img/gif/"+currentCharacter+"/"+currentCharacter+"_"+personagens[currentCharacter]+"_"+movimentos[currentMoviment]+"_"+objetos[currentObject]+".gif";
-        }
-    }
-    
-       
+    checkImgType();     
 }
 
 /**
@@ -125,7 +113,7 @@ function selectObject(e){
     object.removeClass("selecionado");
     currentObject = objectClass[2];
     $("."+currentObject).addClass("selecionado");
-    imgObj.src = "img/objetos/"+currentObject+".png"; 
+    checkImgType();
 }
 
 /**
@@ -137,13 +125,24 @@ function selectMoviment(e){
     moviment.removeClass("selecionado");
     currentMoviment = movimentClass[2];
     $("."+currentMoviment).addClass("selecionado");
-     if(currentMoviment && currentCharacter){
-         imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
-         checkHands();
-     }
+    checkImgType();
 }
 
-
+function checkImgType(){
+    if(btnJpg.attr('class').indexOf('btn-jpg-ativo') != -1){
+        if(currentMoviment && currentCharacter){
+            imgObj.src = "img/objetos/"+currentObject+".png";
+            imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
+            checkHands();
+        }  
+    }else if(btnGif.attr('class').indexOf('btn-gif-ativo')!= -1){
+        imgObj.src = "";
+        imgHand.src = "";
+        if(currentObject && currentCharacter && (currentMoviment == 'm1' || currentMoviment == 'm2' || currentMoviment == 'm3')){
+            imgCharacter.src = "img/gif/"+currentCharacter+"/"+currentCharacter+"_"+personagens[currentCharacter]+"_"+movimentos[currentMoviment]+"_"+objetos[currentObject]+".gif";
+        }
+    }
+}
 /**
  * Checa se o movimento precisa de maos;
  */
