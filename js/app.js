@@ -80,9 +80,6 @@ function setEvents(){
         obj.draggable({
             containment: $('.quadro-imagens')
         });
-        obj.draggable({
-            containment: $('.quadro-imagens')
-        });
     });
     
     btnJpg.on("click",() => setImgJpg());
@@ -219,9 +216,10 @@ function saveImg(){
 */
 
 function setImgJpg(){
-    if(btnGif.attr('class').indexOf("btn-gif-ativo") == -1){
-        btnJpg.toggleClass("btn-jpg-ativo");
-    }      
+    if(btnGif.attr('class').indexOf("btn-gif-ativo"))
+        btnGif.removeClass("btn-gif-ativo");
+    btnJpg.toggleClass("btn-jpg-ativo");
+          
 }
 
 /**
@@ -229,10 +227,9 @@ function setImgJpg(){
 */
 
 function setImgGif(){
-    if(btnJpg.attr('class').indexOf("btn-jpg-ativo") == -1){
-        btnGif.toggleClass("btn-gif-ativo");
-    }
-        
+    if(btnJpg.attr('class').indexOf("btn-jpg-ativo"))
+        btnJpg.removeClass("btn-jpg-ativo");
+    btnGif.toggleClass("btn-gif-ativo");        
 }
 
 
