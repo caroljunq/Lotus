@@ -3,7 +3,6 @@
 window.$ = window.jQuery = require('jquery');
 
 const html2canvas = require('html2canvas');
-const filesaver = require('file-saver');
 
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
