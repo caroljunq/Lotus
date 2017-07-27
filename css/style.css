@@ -219,3 +219,29 @@ body{
     position: absolute;
     right: 24vw;
 }
+
+.icone{
+    background: url(../img/botoes/arrow.png) no-repeat;
+    position: absolute;
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+}
+
+.icone:hover{
+    opacity: .5;
+}
+
+.icon-back{
+   left: 3vw;
+   top: 20vw;
+   transform: rotate(90deg);
+}
+
+.icon-next{
+   right: 6vw;
+   top: 20vw;
+   transform: rotate(-90deg);
+}
+
+

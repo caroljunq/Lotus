@@ -23,12 +23,16 @@ const character = $('.personagem'),
       btnJpg = $(".btn-jpg"),
       btnGif = $(".btn-gif"),
       btnSaibaMais = $(".btn-saiba-mais"),
-      btnVoltar = $(".btn-voltar");
+      btnVoltar = $(".btn-voltar"),
+      btnBack = $(".icon-back"),
+      btnNext = $(".icon-next"),
+      imgSaibaMais = document.getElementById("img-saiba");
 
 let currentCharacter = 0;
 let currentObject = 0;
 let currentMoviment = 0;
 let currentDegree = 0;
+let currentPage = 1;
 
 const personagens = {
     'p1': 'sarah',
@@ -89,6 +93,9 @@ function setEvents(){
     
     btnSaibaMais.on("click",() => showSaibaMais());
     btnVoltar.on("click",() => removeSaibaMais());
+    
+    btnBack.on("click",() => backPage());
+    btnNext.on("click",() => nextPage());
 }
 
 
@@ -96,6 +103,8 @@ function setEvents(){
  * Init
  */
 function init(){
+    btnBack.hide();
+    imgSaibaMais.src = "img/saiba-mais/1.png";
     setEvents();
 }
 
@@ -254,6 +263,34 @@ function showSaibaMais(){
 */
 function removeSaibaMais(){
     $(".saiba-mais").fadeOut(1000);
+}
+
+/**
+* Proxima pg do saiba mais
+*/
+function nextPage(){
+    imgSaibaMais.src="";
+    currentPage++;
+    if(currentPage == 12)
+        btnNext.hide();
+    btnBack.show();
+ 
+    imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
+}
+
+/**
+* Anterior pg do saiba mais
+*/
+function backPage(){
+    currentPage--;
+    if(currentPage == 1)
+        btnBack.hide();
+    
+    btnNext.show();
+    
+    imgSaibaMais.src="";
+    
+    imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
 }
 
 init();

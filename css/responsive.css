@@ -34,5 +34,13 @@
         width: 44.6vw;
     }
     
+    .icon-back{
+        transform: scale(.70) rotate(90deg);
+    }
+    
+    .icon-next{
+        transform: scale(.70) rotate(-90deg);
+    }
+    
 }
 
