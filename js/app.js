@@ -25,6 +25,42 @@ let currentObject = 0;
 let currentMoviment = 0;
 let currentDegree = 0;
 
+const personagens = {
+    'p1': 'sarah',
+    'p2':'milla',
+    'p3':'will',
+    'p4':'beto',
+    'p5':'lu',
+    'p6':'dani',
+    'p7':'oli',
+    'p8':'gaga',
+    'p9':'joao'
+};
+
+const movimentos = {
+    'm1': 'mupar',
+    'm2':'voquer',
+    'm3':'zabir',
+    'm4':'move',
+    'm5':'cola',
+    'm6':'seca',
+    'm7':'chuta',
+    'm8':'desenha',
+    'm9':'ganha'
+};
+
+const objetos = {
+    'o1': 'reveca',
+    'o2':'guzata',
+    'o3':'tabilu',
+    'o4':'bule',
+    'o5':'nave',
+    'o6':'remo',
+    'o7':'lata',
+    'o8':'bicho',
+    'o9':'mochila'
+}
+
 /**
  * Eventos elementos e botoes
  */
@@ -150,7 +186,7 @@ function saveImg(){
         let a = document.createElement('a');
         // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-        a.download = 'foto1.jpg';
+        a.download = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.jpg';
         a.click();
       }
     });
