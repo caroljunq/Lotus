@@ -3,6 +3,7 @@
 window.$ = window.jQuery = require('jquery');
 
 const html2canvas = require('html2canvas');
+const filesaver = require('file-saver');
 
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
@@ -210,23 +211,29 @@ function zoomOut(){
 * Salva img
 */
 function saveImg(){
-    btnRotacionar.css('background','none');
-    btnZoomIn.css('background','none');
-    btnZoomOut.css('background','none');
-    $(".btn-rotacionar").css('background','transparent');
-    html2canvas($('.quadro-imagens'), 
-    {
-      onrendered: function (canvas) {
-        let a = document.createElement('a');
-        // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-        a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-        a.download = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.jpg';
-        a.click();
-      }
-    });
-    btnRotacionar.css('background','url(img/botoes/rotacionar.png) no-repeat');
-    btnZoomIn.css('background','url(img/botoes/aumentar.png) no-repeat');
-    btnZoomOut.css('background','url(img/botoes/diminuir.png) no-repeat');
+    if(btnJpg.attr('class').indexOf('btn-jpg-ativo') != -1){
+        btnRotacionar.css('background','none');
+        btnZoomIn.css('background','none');
+        btnZoomOut.css('background','none');
+        $(".btn-rotacionar").css('background','transparent');
+        html2canvas($('.quadro-imagens'), 
+        {
+          onrendered: function (canvas) {
+            let a = document.createElement('a');
+            // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            a.download = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.jpg';
+            a.click();
+          }
+        });
+        btnRotacionar.css('background','url(img/botoes/rotacionar.png) no-repeat');
+        btnZoomIn.css('background','url(img/botoes/aumentar.png) no-repeat');
+        btnZoomOut.css('background','url(img/botoes/diminuir.png) no-repeat');
+        
+    }else if(btnGif.attr('class').indexOf('btn-gif-ativo') != -1){
+        
+    }
+   
 }
 
 /**
@@ -269,7 +276,7 @@ function removeSaibaMais(){
 * Proxima pg do saiba mais
 */
 function nextPage(){
-    imgSaibaMais.src="";
+ 
     currentPage++;
     if(currentPage == 12)
         btnNext.hide();
@@ -288,10 +295,12 @@ function backPage(){
     
     btnNext.show();
     
-    imgSaibaMais.src="";
+    
     
     imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
 }
+
+
 
 init();
 
