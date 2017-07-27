@@ -167,6 +167,7 @@ body{
 
 #personagem-escolhido{
     width: 45vw;
+    pointer-events: none;
 }
 
 #mao{
@@ -174,7 +175,7 @@ body{
     position: absolute;
     z-index: 4;
     right: 4vw;
-    pointer-events: none
+    pointer-events: none;
 }
 
 #obj{
@@ -195,3 +196,8 @@ body{
 .btn-gif-ativo{
     background: url("../img/botoes/gif_on.png") no-repeat; 
 }
+/*
+
+.saiba-mais{
+    background: 
+}*/
