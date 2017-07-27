@@ -196,8 +196,26 @@ body{
 .btn-gif-ativo{
     background: url("../img/botoes/gif_on.png") no-repeat; 
 }
-/*
+
 
 .saiba-mais{
-    background: 
-}*/
+    background: rgba(255,255,255,0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    position: absolute;
+    display: none;
+}
+
+.btn-voltar{
+    background: url(../img/botoes/saiba_mais2.png) no-repeat;
+    position: absolute;
+    right: -136px;
+    top: -208px;   
+}
+
+.img-saiba-mais{
+    width: 90%;
+    position: absolute;
+    right: 24vw;
+}

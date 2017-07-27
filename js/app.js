@@ -21,7 +21,9 @@ const character = $('.personagem'),
       mao = $("#mao"),
       btnSave = $(".btn-salvar"),
       btnJpg = $(".btn-jpg"),
-      btnGif = $(".btn-gif");
+      btnGif = $(".btn-gif"),
+      btnSaibaMais = $(".btn-saiba-mais"),
+      btnVoltar = $(".btn-voltar");
 
 let currentCharacter = 0;
 let currentObject = 0;
@@ -84,6 +86,9 @@ function setEvents(){
     
     btnJpg.on("click",() => setImgJpg());
     btnGif.on("click",() => setImgGif());
+    
+    btnSaibaMais.on("click",() => showSaibaMais());
+    btnVoltar.on("click",() => removeSaibaMais());
 }
 
 
@@ -128,6 +133,10 @@ function selectMoviment(e){
     $("."+currentMoviment).addClass("selecionado");
     checkImgType();
 }
+
+/**
+ * Checa se o tipo da imagem que vai mostrar
+ */
 
 function checkImgType(){
     if(btnJpg.attr('class').indexOf('btn-jpg-ativo') != -1){
@@ -232,7 +241,20 @@ function setImgGif(){
     btnGif.toggleClass("btn-gif-ativo");        
 }
 
+/**
+* Mostra tela do saiba mais
+*/
 
+function showSaibaMais(){
+    $(".saiba-mais").fadeIn(1000);
+}
+
+/**
+* Esconde tela do saiba mais
+*/
+function removeSaibaMais(){
+    $(".saiba-mais").fadeOut(1000);
+}
 
 init();
 
