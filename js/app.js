@@ -28,9 +28,9 @@ const character = $('.personagem'),
       btnNext = $(".icon-next"),
       imgSaibaMais = document.getElementById("img-saiba");
 
-let currentCharacter = 0;
-let currentObject = 0;
-let currentMoviment = 0;
+let currentCharacter = "p1";
+let currentObject = "o1";
+let currentMoviment = "m1";
 let currentDegree = 0;
 let currentPage = 1;
 
@@ -103,6 +103,10 @@ function setEvents(){
  * Init
  */
 function init(){
+    $("."+currentCharacter).addClass("selecionado");
+    $("."+currentMoviment).addClass("selecionado");
+    $("."+currentObject).addClass("selecionado");
+    btnJpg.addClass("btn-jpg-ativo");
     btnBack.hide();
     imgSaibaMais.src = "img/saiba-mais/1.png";
     setEvents();
