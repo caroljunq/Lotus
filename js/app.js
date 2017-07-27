@@ -18,7 +18,9 @@ const character = $('.personagem'),
       btnZoomIn = $(".btn-aumentar"),
       btnZoomOut = $(".btn-diminuir"),
       obj = $("#obj"),
-      btnSave = $(".btn-salvar");
+      btnSave = $(".btn-salvar"),
+      btnJpg = $(".btn-jpg"),
+      btnGif = $(".btn-gif");
 
 let currentCharacter = 0;
 let currentObject = 0;
@@ -78,6 +80,9 @@ function setEvents(){
             containment: $('.quadro-imagens')
         });
     });
+    
+    btnJpg.on("click",() => setImgJpg());
+    btnGif.on("click",() => setImgGif());
 }
 
 
@@ -96,11 +101,19 @@ function selectCharacter(e){
     let characterClass = $(e.currentTarget).attr("class").split(" ");
     character.removeClass("selecionado");
     currentCharacter = characterClass[2];
-    $("."+currentCharacter).addClass("selecionado");    
-    if(currentMoviment && currentCharacter){
-       imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
-       checkHands()
+    $("."+currentCharacter).addClass("selecionado");
+    
+    if(btnJpg.attr('class').indexOf('btn-jpg-ativo') != -1){
+        if(currentMoviment && currentCharacter){
+            imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
+            checkHands()
+        }  
+    }else if(btnGif.attr('class').indexOf('btn-gif-ativo')!= -1){
+        if(currentObject && currentCharacter && (currentMoviment == 'm1' || currentMoviment == 'm2' || currentMoviment == 'm3')){
+            imgCharacter.src = "img/gif/"+currentCharacter+"/"+currentCharacter+"_"+personagens[currentCharacter]+"_"+movimentos[currentMoviment]+"_"+objetos[currentObject]+".gif";
+        }
     }
+    
        
 }
 
@@ -126,7 +139,7 @@ function selectMoviment(e){
     $("."+currentMoviment).addClass("selecionado");
      if(currentMoviment && currentCharacter){
          imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
-         checkHands()
+         checkHands();
      }
 }
 
@@ -197,6 +210,29 @@ function saveImg(){
     btnZoomIn.css('background','url(img/botoes/aumentar.png) no-repeat');
     btnZoomOut.css('background','url(img/botoes/diminuir.png) no-repeat');
 }
+
+/**
+* Coloca na tela a imagem jpg
+*/
+
+function setImgJpg(){
+    if(btnGif.attr('class').indexOf("btn-gif-ativo") == -1){
+        btnJpg.toggleClass("btn-jpg-ativo");
+    }      
+}
+
+/**
+* Coloca na tela a imagem gif
+*/
+
+function setImgGif(){
+    if(btnJpg.attr('class').indexOf("btn-jpg-ativo") == -1){
+        btnGif.toggleClass("btn-gif-ativo");
+    }
+        
+}
+
+
 
 init();
 
