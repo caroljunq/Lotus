@@ -179,7 +179,10 @@ function zoomOut(){
 * Salva img
 */
 function saveImg(){
-    $(".botoes").hide();
+    btnRotacionar.css('background','none');
+    btnZoomIn.css('background','none');
+    btnZoomOut.css('background','none');
+    $(".btn-rotacionar").css('background','transparent');
     html2canvas($('.quadro-imagens'), 
     {
       onrendered: function (canvas) {
@@ -190,7 +193,9 @@ function saveImg(){
         a.click();
       }
     });
-    $(".botoes").show();
+    btnRotacionar.css('background','url(img/botoes/rotacionar.png) no-repeat');
+    btnZoomIn.css('background','url(img/botoes/aumentar.png) no-repeat');
+    btnZoomOut.css('background','url(img/botoes/diminuir.png) no-repeat');
 }
 
 init();
