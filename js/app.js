@@ -18,6 +18,7 @@ const character = $('.personagem'),
       btnZoomIn = $(".btn-aumentar"),
       btnZoomOut = $(".btn-diminuir"),
       obj = $("#obj"),
+      mao = $("#mao"),
       btnSave = $(".btn-salvar"),
       btnJpg = $(".btn-jpg"),
       btnGif = $(".btn-gif");
@@ -76,6 +77,9 @@ function setEvents(){
     btnZoomOut.on('click', e => zoomOut());
     btnSave.on('click',e => saveImg());
     $(document).ready(function() {
+        obj.draggable({
+            containment: $('.quadro-imagens')
+        });
         obj.draggable({
             containment: $('.quadro-imagens')
         });
