@@ -87,13 +87,13 @@ function setEvents(){
             containment: $('.quadro-imagens')
         });
     });
-    
+
     btnJpg.on("click",() => setImgJpg());
     btnGif.on("click",() => setImgGif());
-    
+
     btnSaibaMais.on("click",() => showSaibaMais());
     btnVoltar.on("click",() => removeSaibaMais());
-    
+
     btnBack.on("click",() => backPage());
     btnNext.on("click",() => nextPage());
 }
@@ -121,7 +121,7 @@ function selectCharacter(e){
     character.removeClass("selecionado");
     currentCharacter = characterClass[2];
     $("."+currentCharacter).addClass("selecionado");
-    checkImgType();     
+    checkImgType();
 }
 
 /**
@@ -157,7 +157,7 @@ function checkImgType(){
             imgObj.src = "img/objetos/"+currentObject+".png";
             imgCharacter.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+".png";
             checkHands();
-        }  
+        }
     }else if(btnGif.attr('class').indexOf('btn-gif-ativo')!= -1){
         imgObj.src = "";
         imgHand.src = "";
@@ -172,7 +172,7 @@ function checkImgType(){
 
 function checkHands(){
     if(currentMoviment == "m4" || currentMoviment == "m5" || currentMoviment == "m6"){
-       imgHand.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+"-mao.png"; 
+       imgHand.src = "img/personagem_grande/"+currentCharacter+"/"+currentMoviment+"-mao.png";
     }else{
        imgHand.src = "";
     }
@@ -192,18 +192,18 @@ function rotateObj(e){
 /**
  * Aumenta imagem escolhida em 15 px
 */
-    
+
 function zoomIn(){
     let currentWidth = parseInt(obj.css('width'),10);
     currentWidth += 15;
     obj.css("width",currentWidth + "px");
 }
-    
-    
+
+
 /**
 * Diminui imagem escolhida em 15 px
 */
-    
+
 function zoomOut(){
     let currentWidth = parseInt(obj.css('width'),10);
     currentWidth -= 15;
@@ -219,7 +219,7 @@ function saveImg(){
         btnZoomIn.css('background','none');
         btnZoomOut.css('background','none');
         $(".btn-rotacionar").css('background','transparent');
-        html2canvas($('.quadro-imagens'), 
+        html2canvas($('.quadro-imagens'),
         {
           onrendered: function (canvas) {
             let a = document.createElement('a');
@@ -232,11 +232,11 @@ function saveImg(){
         btnRotacionar.css('background','url(img/botoes/rotacionar.png) no-repeat');
         btnZoomIn.css('background','url(img/botoes/aumentar.png) no-repeat');
         btnZoomOut.css('background','url(img/botoes/diminuir.png) no-repeat');
-        
+
     }else if(btnGif.attr('class').indexOf('btn-gif-ativo') != -1){
-        
+
     }
-   
+
 }
 
 /**
@@ -247,7 +247,7 @@ function setImgJpg(){
     if(btnGif.attr('class').indexOf("btn-gif-ativo"))
         btnGif.removeClass("btn-gif-ativo");
     btnJpg.toggleClass("btn-jpg-ativo");
-          
+
 }
 
 /**
@@ -257,7 +257,7 @@ function setImgJpg(){
 function setImgGif(){
     if(btnJpg.attr('class').indexOf("btn-jpg-ativo"))
         btnJpg.removeClass("btn-jpg-ativo");
-    btnGif.toggleClass("btn-gif-ativo");        
+    btnGif.toggleClass("btn-gif-ativo");
 }
 
 /**
@@ -279,12 +279,10 @@ function removeSaibaMais(){
 * Proxima pg do saiba mais
 */
 function nextPage(){
- 
     currentPage++;
-    if(currentPage == 12)
+    if(currentPage == 17)
         btnNext.hide();
     btnBack.show();
- 
     imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
 }
 
@@ -295,16 +293,11 @@ function backPage(){
     currentPage--;
     if(currentPage == 1)
         btnBack.hide();
-    
+
     btnNext.show();
-    
-    
-    
     imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
 }
 
 
 
 init();
-
-

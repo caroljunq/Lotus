@@ -1,0 +1,46 @@
+@media only screen and (max-height: 720px) and (max-width: 1280px){
+    .bton{
+        transform: scale(.13);
+    }
+    
+    .btn-rotacionar{
+        right: -105px;
+    }
+    .btn-aumentar{
+        right: -169px;
+    }
+    .btn-diminuir{
+        right: -230px;
+    }
+
+    .title-personagem{
+
+        top: calc(4% + 12px);
+    }
+
+    .title-movimentos{
+        top: calc(37% + 24px);
+    }
+
+    .title-objetos{
+        top: calc(62% + 36px);
+    }
+
+    .btn-salvar{
+        transform: scale(.12);
+        right: -465px;
+    }
+    #mao{
+        width: 44.6vw;
+    }
+    
+    .icon-back{
+        transform: scale(.70) rotate(90deg);
+    }
+    
+    .icon-next{
+        transform: scale(.70) rotate(-90deg);
+    }
+    
+}
+

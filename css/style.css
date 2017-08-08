@@ -132,18 +132,18 @@ body{
     margin-left: -25px;
     margin-top: -3px;
 }
- 
+
 .btn-saiba-mais{
     background: url("../img/botoes/saiba_mais1.png") no-repeat;
     right: -172px;
     top: -208px;
-    
+
 }
 
 .btn-jpg{
     background: url("../img/botoes/jpeg_off.png") no-repeat;
     right: -121px;
-    bottom: 64px;  
+    bottom: 64px;
 }
 
 .btn-salvar{
@@ -156,9 +156,9 @@ body{
 }
 
 .btn-gif{
-    background: url("../img/botoes/gif_off.png") no-repeat; 
+    background: url("../img/botoes/gif_off.png") no-repeat;
     right: -183px;
-    bottom: 64px; 
+    bottom: 64px;
 }
 
 .selecionado{
@@ -190,11 +190,11 @@ body{
 }
 
 .btn-jpg-ativo{
-    background: url("../img/botoes/jpeg_on.png") no-repeat; 
+    background: url("../img/botoes/jpeg_on.png") no-repeat;
 }
 
 .btn-gif-ativo{
-    background: url("../img/botoes/gif_on.png") no-repeat; 
+    background: url("../img/botoes/gif_on.png") no-repeat;
 }
 
 
@@ -211,13 +211,13 @@ body{
     background: url(../img/botoes/saiba_mais2.png) no-repeat;
     position: absolute;
     right: -136px;
-    top: -208px;   
+    top: -208px;
 }
 
 .img-saiba-mais{
-    width: 90%;
+    width: 80%;
     position: absolute;
-    right: 24vw;
+    right: 15vw;
 }
 
 .icone{
@@ -243,5 +243,3 @@ body{
    top: 20vw;
    transform: rotate(-90deg);
 }
-
-
