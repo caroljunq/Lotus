@@ -26,13 +26,15 @@ const character = $('.personagem'),
       btnVoltar = $(".btn-voltar"),
       btnBack = $(".icon-back"),
       btnNext = $(".icon-next"),
-      imgSaibaMais = document.getElementById("img-saiba");
+      imgSaibaMais = document.getElementById("img-saiba"),
+      btnScreens = $(".bton2");
 
 let currentCharacter = "p1";
 let currentObject = "o1";
 let currentMoviment = "m1";
 let currentDegree = 0;
 let currentPage = 1;
+let lastPage = 0;
 
 const personagens = {
     'p1': 'sarah',
@@ -96,6 +98,8 @@ function setEvents(){
 
     btnBack.on("click",() => backPage());
     btnNext.on("click",() => nextPage());
+
+    btnScreens.on("click",e => setPage(e));
 }
 
 
@@ -279,25 +283,54 @@ function removeSaibaMais(){
 * Proxima pg do saiba mais
 */
 function nextPage(){
+    $(".bton3").hide();
+    $(".bton2").show();
     currentPage++;
     if(currentPage == 17)
         btnNext.hide();
     btnBack.show();
     imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
+    $(".btn-"+currentPage).hide();
+    $(".btn-"+currentPage+"-on").show();
 }
 
 /**
 * Anterior pg do saiba mais
 */
 function backPage(){
+    $(".bton3").hide();
+    $(".bton2").show();
     currentPage--;
     if(currentPage == 1)
         btnBack.hide();
 
     btnNext.show();
     imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
+    $(".btn-"+currentPage).hide();
+    $(".btn-"+currentPage+"-on").show();
 }
 
-
+function setPage(e){
+    let targetClass = $(e.currentTarget).attr('class').split(" ");
+    let page = (targetClass[1].split("-"))[1];
+    currentPage = page;
+    $(".bton3").hide();
+    if(lastPage != 0)
+        $(".btn-"+lastPage).show();
+    if(page == 17){
+        btnNext.hide();
+    }else if(page == 1){
+        btnBack.hide();
+    }else if(page >= 2){
+        btnBack.show();
+    }else{
+        btnNext.show();
+    }
+    lastPage = page;
+    $(".bton2").show();
+    $(".btn-"+page).hide();
+    $(".btn-"+page+"-on").show();
+    imgSaibaMais.src = "img/saiba-mais/"+page+".png";
+}
 
 init();

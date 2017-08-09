@@ -2,7 +2,7 @@
     .bton{
         transform: scale(.13);
     }
-    
+
     .btn-rotacionar{
         right: -105px;
     }
@@ -33,14 +33,22 @@
     #mao{
         width: 44.6vw;
     }
-    
+
     .icon-back{
         transform: scale(.70) rotate(90deg);
     }
-    
+
     .icon-next{
         transform: scale(.70) rotate(-90deg);
     }
-    
-}
 
+    .bton2{
+        transform: scale(.19);
+        margin: -105px;
+    }
+
+    .footer{
+        bottom: 11vh;
+    }
+
+}

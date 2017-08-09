@@ -11,6 +11,7 @@
 
 body{
     background-color: #e5e5e5;
+    user-select: none;
 }
 
 .base{
@@ -242,4 +243,34 @@ body{
    right: 6vw;
    top: 20vw;
    transform: rotate(-90deg);
+}
+
+.footer{
+    position: absolute;
+    bottom: 5vh;
+    width: 85vw;
+    height: 6vw;
+    left: 4vw;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.bton2{
+    width: 263px;
+    height: 358px;
+    transform: scale(.285);
+    cursor: pointer;
+    bottom: -5px;
+    margin: -95px;
+}
+
+.bton3{
+    width: 263px;
+    height: 358px;
+    transform: scale(.22);
+    cursor: pointer;
+    bottom: -5px;
+    margin: -95px;
+    display: none;
 }
