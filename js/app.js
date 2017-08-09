@@ -323,7 +323,7 @@ function setPage(e){
         btnBack.hide();
     }else if(page >= 2){
         btnBack.show();
-    }else{
+    }else if(page <= 16){
         btnNext.show();
     }
     lastPage = page;
