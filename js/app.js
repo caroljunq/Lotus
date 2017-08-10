@@ -268,7 +268,13 @@ function setImgGif(){
 */
 
 function showSaibaMais(){
+    $(".bton3").hide();
+    $(".bton2").show();
+    $(".btn-1").hide();
+    $(".btn-1-on").show();
     $(".saiba-mais").fadeIn(1000);
+    currentPage = 1;
+    showPage(1);
 }
 
 /**
