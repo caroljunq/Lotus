@@ -111,7 +111,6 @@ function init(){
     $("."+currentMoviment).addClass("selecionado");
     $("."+currentObject).addClass("selecionado");
     btnJpg.addClass("btn-jpg-ativo");
-    btnBack.hide();
     imgSaibaMais.src = "img/saiba-mais/1.png";
     setEvents();
 }
@@ -286,12 +285,20 @@ function nextPage(){
     $(".bton3").hide();
     $(".bton2").show();
     currentPage++;
-    if(currentPage == 17)
-        btnNext.hide();
-    btnBack.show();
-    imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
+    showPage(currentPage);
     $(".btn-"+currentPage).hide();
     $(".btn-"+currentPage+"-on").show();
+}
+
+function showPage(page){
+    if(page > 17){
+        currentPage = 1;
+        page = 1;
+    }else if(page < 1){
+        currentPage = 17;
+        page = 17;
+    }
+    imgSaibaMais.src = "img/saiba-mais/"+page+".png";
 }
 
 /**
@@ -301,11 +308,7 @@ function backPage(){
     $(".bton3").hide();
     $(".bton2").show();
     currentPage--;
-    if(currentPage == 1)
-        btnBack.hide();
-
-    btnNext.show();
-    imgSaibaMais.src = "img/saiba-mais/"+currentPage+".png";
+    showPage(currentPage);
     $(".btn-"+currentPage).hide();
     $(".btn-"+currentPage+"-on").show();
 }
@@ -317,20 +320,13 @@ function setPage(e){
     $(".bton3").hide();
     if(lastPage != 0)
         $(".btn-"+lastPage).show();
-    if(page == 17){
-        btnNext.hide();
-    }else if(page == 1){
-        btnBack.hide();
-    }else if(page >= 2){
-        btnBack.show();
-    }else if(page <= 16){
-        btnNext.show();
-    }
+
     lastPage = page;
+
     $(".bton2").show();
     $(".btn-"+page).hide();
     $(".btn-"+page+"-on").show();
-    imgSaibaMais.src = "img/saiba-mais/"+page+".png";
+    showPage(page);
 }
 
 init();
