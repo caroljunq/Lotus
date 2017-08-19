@@ -13,16 +13,16 @@
         right: -230px;
     }
 
-    .title-character{
+    .title-personagem{
 
         top: calc(4% + 12px);
     }
 
-    .title-moviments{
+    .title-movimentos{
         top: calc(37% + 24px);
     }
 
-    .title-objects{
+    .title-objetos{
         top: calc(62% + 36px);
     }
 
