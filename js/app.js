@@ -292,11 +292,11 @@ function nextPage(){
     $(".bton2").show();
     currentPage++;
     showPage(currentPage);
+    $(".btn-"+currentPage).hide();
+    $(".btn-"+currentPage+"-on").show();
 }
 
 function showPage(page){
-    $(".btn-"+page).hide();
-    $(".btn-"+page+"-on").show();
     if(page > 17){
         currentPage = 1;
         page = 1;
@@ -315,6 +315,8 @@ function backPage(){
     $(".bton2").show();
     currentPage--;
     showPage(currentPage);
+    $(".btn-"+currentPage).hide();
+    $(".btn-"+currentPage+"-on").show();
 }
 
 function setPage(e){
@@ -328,6 +330,8 @@ function setPage(e){
     lastPage = page;
 
     $(".bton2").show();
+    $(".btn-"+page).hide();
+    $(".btn-"+page+"-on").show();
     showPage(page);
 }
 
