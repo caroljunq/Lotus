@@ -11,7 +11,7 @@ document.documentElement.style.overflow = 'hidden';
 const character = $('.personagem'),
       object = $('.objeto'),
       moviment = $('.movimento'),
-      imgCharacter = document.getElementById("choosen-character"),
+      imgCharacter = document.getElementById("personagem-escolhido"),
       imgHand = document.getElementById("mao"),
       imgObj = document.getElementById("obj"),
       btnRotacionar = $(".btn-rotacionar"),
@@ -36,7 +36,7 @@ let currentDegree = 0;
 let currentPage = 1;
 let lastPage = 0;
 
-const characters = {
+const personagens = {
     'p1': 'sarah',
     'p2':'milla',
     'p3':'will',
@@ -86,7 +86,7 @@ function setEvents(){
     btnSave.on('click',e => saveImg());
     $(document).ready(function() {
         obj.draggable({
-            containment: $('.image-display')
+            containment: $('.quadro-imagens')
         });
     });
 
@@ -165,7 +165,7 @@ function checkImgType(){
         imgObj.src = "";
         imgHand.src = "";
         if(currentObject && currentCharacter && (currentMoviment == 'm1' || currentMoviment == 'm2' || currentMoviment == 'm3')){
-            imgCharacter.src = "img/gif/"+currentCharacter+"/"+currentCharacter+"_"+characters[currentCharacter]+"_"+movimentos[currentMoviment]+"_"+objetos[currentObject]+".gif";
+            imgCharacter.src = "img/gif/"+currentCharacter+"/"+currentCharacter+"_"+personagens[currentCharacter]+"_"+movimentos[currentMoviment]+"_"+objetos[currentObject]+".gif";
         }
     }
 }
@@ -222,13 +222,13 @@ function saveImg(){
         btnZoomIn.css('background','none');
         btnZoomOut.css('background','none');
         $(".btn-rotacionar").css('background','transparent');
-        html2canvas($('.image-display'),
+        html2canvas($('.quadro-imagens'),
         {
           onrendered: function (canvas) {
             let a = document.createElement('a');
             // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
             a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-            a.download = characters[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.jpg';
+            a.download = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.jpg';
             a.click();
           }
         });
@@ -288,15 +288,15 @@ function removeSaibaMais(){
 * Proxima pg do saiba mais
 */
 function nextPage(){
-    $(".bton3").hide();+
+    $(".bton3").hide();
     $(".bton2").show();
     currentPage++;
     showPage(currentPage);
+    $(".btn-"+currentPage).hide();
+    $(".btn-"+currentPage+"-on").show();
 }
 
 function showPage(page){
-    $(".btn-"+page).hide();
-    $(".btn-"+page+"-on").show();
     if(page > 17){
         currentPage = 1;
         page = 1;
@@ -315,6 +315,8 @@ function backPage(){
     $(".bton2").show();
     currentPage--;
     showPage(currentPage);
+    $(".btn-"+currentPage).hide();
+    $(".btn-"+currentPage+"-on").show();
 }
 
 function setPage(e){
@@ -328,6 +330,8 @@ function setPage(e){
     lastPage = page;
 
     $(".bton2").show();
+    $(".btn-"+page).hide();
+    $(".btn-"+page+"-on").show();
     showPage(page);
 }
 
