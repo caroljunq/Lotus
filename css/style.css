@@ -39,7 +39,7 @@ body{
     position: relative;
 }
 
-.quadro-imagens{
+.image-display{
     margin: 12px;
     background-color: white;
     position: absolute;
@@ -53,7 +53,7 @@ body{
     align-items: flex-end;
 }
 
-.personagens{
+.characters{
     background-color: #14bdc6;
 }
 
@@ -75,18 +75,18 @@ body{
 }
 
 
-.title-personagem{
+.title-character{
     color: #14bdc6;
     top: calc(4% + 12px);
 }
 
-.title-movimentos{
+.title-moviments{
     color: #cc15cc;
     top: calc(37% + 24px);
     font-size: 1.1em;
 }
 
-.title-objetos{
+.title-objects{
   color: #dda210;
   top: calc(65% + 36px);
 }
@@ -166,7 +166,7 @@ body{
     opacity: 1.0;
 }
 
-#personagem-escolhido{
+#choosen-character{
     width: 45vw;
     pointer-events: none;
 }
