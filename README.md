@@ -1,9 +1,10 @@
 # Lótus
 
 ## Team
-* **Graduate**: Thiago Pestillo Seles
-* **Developer**: Carolina Junqueira Ferreira
+* **Graduate**: Thiago Pestillo Seles - Graphic Design - Unesp/Bauru -  São Paulo State University - Campus Bauru
+* **Developer**: Carolina Junqueira Ferreira - Bachelor in Information Systems - Unesp/Bauru -  São Paulo State University - Campus Bauru
 * **Researcher**: M. Sc. Anderson Jonas das Neves
+* **Supervisor**: PhD. Cassia Leticia Carrara Domiciano 
 * **Research Team**:
   * M. Sc. Anderson Jonas das Neves- Researcher (PhD student) - UFSCar - The Federal University of São Carlos
   * PhD Deisy das Graças de Souza - Surpervisor - UFSCar - The Federal University of São Carlos
