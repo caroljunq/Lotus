@@ -1,5 +1,14 @@
 # Lótus
 
+## Team
+* **Graduate**: Thiago Pestillo Seles
+* **Developer**: Carolina Junqueira Ferreira
+* **Researcher**: M. Sc. Anderson Jonas das Neves
+* **Research Team**: 
+- Pr
+
+
+
 ## Descrição
 ![inicial](https://github.com/caroljunq/Lotus/blob/master/img/examples/main_page.png "Tela inicial")
 ![instrucoes](https://github.com/caroljunq/Lotus/blob/master/img/examples/instruction.png "Tela de instruções")
@@ -9,3 +18,4 @@
 * Node
 * Electron
 * HTML, CSS, JS
+
