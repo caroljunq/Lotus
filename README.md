@@ -3,6 +3,7 @@ This software was produced for a term paper. It's based on research about teachi
 
 * The research can be found in: link..> (not available).
 * The term paper can be found in: link... (not available)
+* **Download app**: link not available
 
 ## Team
 * **Graduate**: Thiago Pestillo Seles - Graphic Design - Unesp/Bauru -  São Paulo State University - Campus Bauru
@@ -28,3 +29,8 @@ This software was produced for a term paper. It's based on research about teachi
 * HTML, CSS, JS
 * Bootstrap
 
+## Running app
+* git clone
+* cd lotus
+* npm install 
+* npm start
