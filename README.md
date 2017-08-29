@@ -17,7 +17,8 @@ This software was produced for a term paper. It's based on research about teachi
   * PhD Adriane Lima Mortari Moret - Research Member  - FOB/USP Bauru - Faculty of Dentistry of Bauru - University of São Paulo
   * PhD Leandra Tabanez do Nascimento Silva - Research Member - CPA/HRAC - Bauru
 * **Research Development (External Funding Agency)**: Fundação de Amparo a Pesquisa de São Paulo (FAPESP#2016/09109-3)
-* **Supporting**: Instituto de Nacional de Ciência e Tecnologia - Comportamento, Cognição e Ensino (INC&T - ECCE)
+* **Supporting**: Instituto de Nacional de Ciência e Tecnologia - Comportamento, Cognição e Ensino (INC&T - ECCE) and LTIA (Laboratory of Applied Information Technology) Unesp/Bauru
+
 
 ![inicial](https://github.com/caroljunq/Lotus/blob/master/img/examples/main_page.png "Tela inicial")
 ![instrucoes](https://github.com/caroljunq/Lotus/blob/master/img/examples/instruction.png "Tela de instruções")
