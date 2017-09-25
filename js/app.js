@@ -125,7 +125,6 @@ function init(){
 function start(){
     $(".base").show();
     $("#start-screen").fadeOut(1000);
-    $("body").css("background-color","#e5e5e5");
 }
 
 /**
