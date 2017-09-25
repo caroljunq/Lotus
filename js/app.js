@@ -3,6 +3,8 @@
 window.$ = window.jQuery = require('jquery');
 
 const html2canvas = require('html2canvas');
+const fs = require('fs');
+const {dialog} = require('electron').remote;
 
 //tira os scroll bar da tela
 document.documentElement.style.overflow = 'hidden';
@@ -237,9 +239,19 @@ function saveImg(){
         btnZoomOut.css('background','url(img/botoes/diminuir.png) no-repeat');
 
     }else if(btnGif.attr('class').indexOf('btn-gif-ativo') != -1){
-
+      let filePath = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.gif';
+      let fullPath = 'img/gif/'+currentCharacter+'/'+currentCharacter+'_'+filePath;
+      fs.readFile(fullPath,function(err,data){
+        console.log(err);
+          if(!err){
+              var base64 = data.toString('base64').replace(/^data:image\/gif;base64,/, "");
+              var path = dialog.showOpenDialog({
+                  properties: ['openDirectory']
+              });
+              fs.writeFile(path+'/'+filePath,base64,'base64');
+          }
+      });
     }
-
 }
 
 /**
