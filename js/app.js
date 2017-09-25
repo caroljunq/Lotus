@@ -102,6 +102,8 @@ function setEvents(){
     btnNext.on("click",() => nextPage());
 
     btnScreens.on("click",e => setPage(e));
+
+    $(".btn-iniciar").on("click", () => start());
 }
 
 
@@ -115,6 +117,15 @@ function init(){
     btnJpg.addClass("btn-jpg-ativo");
     imgSaibaMais.src = "img/saiba-mais/1.png";
     setEvents();
+}
+
+/**
+ * Aparece tela principal do software
+ */
+function start(){
+    $(".base").show();
+    $("#start-screen").fadeOut(1000);
+    $("body").css("background-color","#e5e5e5");
 }
 
 /**
