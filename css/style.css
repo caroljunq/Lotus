@@ -10,13 +10,35 @@
 }
 
 body{
-    background-color: #e5e5e5;
+    background-color: white;
     user-select: none;
 }
 
-.base{
+.start-screen{
     width: 100vw;
     height: 100vh;
+    background-color: white;
+}
+
+.pesquisadores{
+    margin-top: 22vh;
+}
+
+.btn-iniciar{
+    left: -54%;
+    top: 76%;
+}
+
+.btn-iniciar{
+    width: 1088px !important;
+    height: 375px !important;
+    background: url("../img/inicio/iniciar.png") no-repeat;
+}
+
+.base{
+  display: none;
+  width: 100vw;
+  height: 100vh;
 }
 
 #root{

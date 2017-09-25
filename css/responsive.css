@@ -51,4 +51,11 @@
         bottom: 11vh;
     }
 
+    .logo{
+      width: 400px;
+    }
+
+    .btn-iniciar{
+      top: 66%;
+    }
 }
