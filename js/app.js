@@ -254,11 +254,9 @@ function saveImg(){
       fs.readFile(fullPath,function(err,data){
         console.log(err);
           if(!err){
-              var base64 = data.toString('base64').replace(/^data:image\/gif;base64,/, "");
-              var path = dialog.showOpenDialog({
-                  properties: ['openDirectory']
-              });
-              fs.writeFile(path+'/'+filePath,base64,'base64');
+              let base64 = data.toString('base64').replace(/^data:image\/gif;base64,/, "");
+              let savePath = dialog.showSaveDialog({defaultPath: __dirname+'/'+filePath});
+              fs.writeFile(savePath,base64,'base64');
           }
       });
     }
