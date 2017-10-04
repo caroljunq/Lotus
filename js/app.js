@@ -237,11 +237,11 @@ function saveImg(){
         html2canvas($('.quadro-imagens'),
         {
           onrendered: function (canvas) {
-            let a = document.createElement('a');
             // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-            a.download = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.jpg';
-            a.click();
+            let data = canvas.toDataURL().replace(/^data:image\/\w+;base64,/, "");
+            let file = new Buffer(data, 'base64');
+            let path = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject];
+            imgToDir(file,'jpg',path);
           }
         });
         btnRotacionar.css('background','url(img/botoes/rotacionar.png) no-repeat');
@@ -252,16 +252,24 @@ function saveImg(){
       let filePath = personagens[currentCharacter]+'_'+movimentos[currentMoviment]+'_'+objetos[currentObject]+'.gif';
       let fullPath = 'img/gif/'+currentCharacter+'/'+currentCharacter+'_'+filePath;
       fs.readFile(fullPath,function(err,data){
-        console.log(err);
           if(!err){
               let base64 = data.toString('base64').replace(/^data:image\/gif;base64,/, "");
-              let savePath = dialog.showSaveDialog({defaultPath: __dirname+'/'+filePath});
-              fs.writeFile(savePath,base64,'base64');
+              imgToDir(base64,'gif',filePath);
           }
       });
     }
 }
 
+/**
+* Seleciona a pasta onde a imagem será salva
+*/
+
+function imgToDir(file,type,path){
+    let savePath = dialog.showSaveDialog({defaultPath: __dirname+'/'+path,
+    filters: [{ name: 'Images', extensions: [type]}],
+    properties: ['openDirectory']});
+    fs.writeFile(savePath,file,'base64');
+}
 /**
 * Coloca na tela a imagem jpg
 */
