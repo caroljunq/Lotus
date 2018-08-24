@@ -1,10 +1,6 @@
 # Lotus
 This software was produced for a term paper. It's based on research about teaching and stimulating speech development on deaf children. The software helps researchers to create fun images for this children. Each image is composed of a character, an action, and an object. The researcher can create 729 different image combinations that can be saved in .jpg, then they will be used in research and teaching. Also, the user can save 243 of 729 combination in .gif which is much closer to reality for showing to children and can stimulate the interest of them.
 
-* The research can be found in: link..> (not available).
-* The term paper can be found in: link... (not available)
-* **Download app**: link not available
-
 ## Team
 * **Graduate**: Thiago Pestillo Seles - Graphic Design - Unesp/Bauru -  São Paulo State University - Campus Bauru
 * **Developer**: Carolina Junqueira Ferreira - Bachelor in Information Systems - Unesp/Bauru -  São Paulo State University - Campus Bauru
