@@ -15,6 +15,10 @@ This software was produced for a term paper. It's based on research about teachi
 * **Research Development (External Funding Agency)**: Fundação de Amparo a Pesquisa de São Paulo (FAPESP#2016/09109-3)
 * **Supporting**: Instituto de Nacional de Ciência e Tecnologia - Comportamento, Cognição e Ensino (INC&T - ECCE) and LTIA (Laboratory of Applied Information Technology) Unesp/Bauru
 
+## Patent
+https://gru.inpi.gov.br/pePI/servlet/ProgramaServletController?Action=detail&CodPedido=25191&SearchParameter=L%D3TUS
+* patent number: BR 51 2019 000162 1
+
 
 ![inicial](https://github.com/caroljunq/Lotus/blob/master/img/examples/main_page.png "Tela inicial")
 ![instrucoes](https://github.com/caroljunq/Lotus/blob/master/img/examples/instruction.png "Tela de instruções")
