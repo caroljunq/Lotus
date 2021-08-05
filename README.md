@@ -16,8 +16,12 @@ This software was produced for a term paper. It's based on research about teachi
 * **Supporting**: Instituto de Nacional de Ciência e Tecnologia - Comportamento, Cognição e Ensino (INC&T - ECCE) and LTIA (Laboratory of Applied Information Technology) Unesp/Bauru
 
 ## Patent
-https://gru.inpi.gov.br/pePI/servlet/ProgramaServletController?Action=detail&CodPedido=25191&SearchParameter=L%D3TUS
+
 * patent number: BR 51 2019 000162 1
+
+https://inctecce.com.br/pt/producao/softwares 
+
+https://sgcd.fc.unesp.br/#!/lads/producao/produto-tecnico-e-tecnologico-programas/lotus/
 
 
 ![inicial](https://github.com/caroljunq/Lotus/blob/master/img/examples/main_page.png "Tela inicial")
